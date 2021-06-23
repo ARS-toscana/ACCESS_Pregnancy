@@ -1,6 +1,6 @@
 #-------------------------------
-# ConcePTION - Pregnancy script
-# v1.0 - 8 April 2021
+# ACCESS pregnancy
+# v1.0 - 23 JUne 2021
 # authors: Claudia Bartolini, Rosa Gini, Giorgio Limoncella, Olga Paoletti, Davide Messina
 # -----------------------------
 
