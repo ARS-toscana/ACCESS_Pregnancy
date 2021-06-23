@@ -1,6 +1,6 @@
 #-------------------------------
 # ACCESS pregnancy
-# v1.0 - 23 JUne 2021
+# v1.0 - 23 June 2021
 # authors: Claudia Bartolini, Rosa Gini, Giorgio Limoncella, Olga Paoletti, Davide Messina
 # -----------------------------
 
@@ -30,8 +30,6 @@ source(paste0(thisdir,"/p_parameters/07_itemsets.R"))
 # 01 RETRIEVE RECORDS FRM CDM
 
 system.time(source(paste0(thisdir,"/p_steps/step_01_1_T2.1_create_conceptset_datasets.R")))
-# # in case you choose to optimise memory use, instead of execution time, please comment the previous line, and un-comment the next one
-# #system.time(source(paste0(thisdir,"/p_steps/step_01_1_T2.1_create_conceptset_datasets_memory_optimizer.R")))
 system.time(source(paste0(thisdir,"/p_steps/step_01_2_T2.1_create_spells.R")))
 system.time(source(paste0(thisdir,"/p_steps/step_01_3_T2.1_create_dates_in_PERSONS.R"))) 
 system.time(source(paste0(thisdir,"/p_steps/step_01_4_T2.1_create_prompt_datasets.R")))
