@@ -172,7 +172,8 @@ if(length(files_par)>0){
       print("create EAV_attributes")
       
       ConcePTION_CDM_coding_system_list<-vector(mode="list")
-      METADATA<-fread(paste0(dirinput,"METADATA.csv"))
+      #METADATA<-fread(paste0(dirinput,"METADATA.csv"))
+      METADATA<-fread(paste0(dirinput,"METADATA_CPRD.csv"))
       ConcePTION_CDM_coding_system_list<-unique(unlist(str_split(unique(METADATA[type_of_metadata=="list_of_values" & (columnname=="so_unit" | columnname=="mo_record_vocabulary"),values])," ")))
       
       ConcePTION_CDM_EAV_attributes<-vector(mode="list")
@@ -219,7 +220,8 @@ if(length(files_par)>0){
   print("create EAV_attributes")
   
   ConcePTION_CDM_coding_system_list<-vector(mode="list")
-  METADATA<-fread(paste0(dirinput,"METADATA.csv"))
+  #METADATA<-fread(paste0(dirinput,"METADATA.csv"))
+  METADATA<-fread(paste0(dirinput,"METADATA_CPRD.csv"))
   ConcePTION_CDM_coding_system_list<-unique(unlist(str_split(unique(METADATA[type_of_metadata=="list_of_values" & (columnname=="so_unit" | columnname=="mo_record_vocabulary"),values])," ")))
   
   ConcePTION_CDM_EAV_attributes<-vector(mode="list")

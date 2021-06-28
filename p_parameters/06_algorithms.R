@@ -61,10 +61,10 @@ meaning_of_survey_our_study[["THL"]][["spontaneous_abortion"]]<-list()
 meaning_of_survey_our_study[["THL"]][["induced_termination"]]<-list("induced_termination_registry")
 meaning_of_survey_our_study[["THL"]][["other"]]<-list()
 
-meaning_of_survey_our_study[["CPRD"]][["livebirth_or_stillbirth"]]<-list("pregnancy register")
+meaning_of_survey_our_study[["CPRD"]][["livebirth_or_stillbirth"]]<-list("pregnancy_register")
 meaning_of_survey_our_study[["CPRD"]][["ongoing_pregnancy"]]<-list()
-meaning_of_survey_our_study[["CPRD"]][["spontaneous_abortion"]]<-list()
-meaning_of_survey_our_study[["CPRD"]][["induced_termination"]]<-list()
+meaning_of_survey_our_study[["CPRD"]][["spontaneous_abortion"]]<-list("pregnancy_register")
+meaning_of_survey_our_study[["CPRD"]][["induced_termination"]]<-list("pregnancy_register")
 meaning_of_survey_our_study[["CPRD"]][["other"]]<-list()
 
 meaning_of_survey_our_study[["CNR-IFC"]][["livebirth_or_stillbirth"]]<-list("birth_registry_mother", "birth_registry_child")
