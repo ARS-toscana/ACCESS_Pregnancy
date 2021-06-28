@@ -55,4 +55,4 @@ source(paste0(thisdir,"/p_steps/step_03_06_2_T2.3_merge_stream_of_same_person.R"
 # 04 CREATE PREGNANCIES outcomes
 source(paste0(thisdir,"/p_steps/step_04_01_T2_create_pregnancy_outcomes.R")) 
 source(paste0(thisdir,"/p_steps/step_04_02_create_aggregated_outcomes.R"))
-
+source(paste0(thisdir,"/p_steps/step_04_03_distance_description.R"))
