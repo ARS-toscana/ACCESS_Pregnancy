@@ -45,6 +45,10 @@ if (!require("survival")) install.packages("survival")
 library(survival)
 if (!require("rmarkdown")) install.packages("rmarkdown")
 library(rmarkdown )
+if (!require("ggplot2")) install.packages("ggplot2")
+library(ggplot2 )
+if (!require("ggthemes")) install.packages("ggthemes")
+library(ggthemes)
 
 `%notin%` <- Negate(`%in%`)
 
