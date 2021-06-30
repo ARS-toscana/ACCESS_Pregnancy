@@ -12,6 +12,21 @@ D3_gop<-D3_gop[,pers_group_id:=paste0(person_id,"_", group_identifier_colored)]
 D3_gop <- D3_gop[, year_end_pregnancy:= format(pregnancy_end_date, format = "%Y")]
 D3_gop <- D3_gop[, year_start_pregnancy:= format(pregnancy_start_date, format = "%Y")]
 
+# plot source 
+D3_gop <- D3_gop[, year_end_pregnancy:= format(pregnancy_end_date, format = "%Y")]
+D3_gop <- D3_gop[ITEMSETS=="yes", source:="ITEMSETS"]
+D3_gop <- D3_gop[PROMPT=="yes", source:="PROMPT"]
+D3_gop <- D3_gop[EUROCAT=="yes", source:="EUROCAT"]
+D3_gop <- D3_gop[CONCEPTSETS=="yes", source:="CONCEPTSETS"]
+
+D3_gop_first_record <- D3_gop[n==1]
+
+p_first_record <- ggplot(D3_gop_first_record, aes(year_end_pregnancy, fill=source))+
+  geom_bar()+
+  theme_hc()
+
+ggsave(filename=paste0(dirfigure,"record_stream.pdf"), plot=p_first_record)
+
 
 ## computing the distance
 group_to_keep <- D3_gop[coloured_order=="1_green" & n==1, pers_group_id]
@@ -34,9 +49,10 @@ d<-ggplot(D3_distance, aes(as.integer(distance_from_green), fill=coloured_order)
   scale_fill_manual(values = c("1_green" = "green", "2_yellow" = "yellow", "3_blue" = "blue", "4_red" = "red"))+
   scale_x_continuous(name="Days from start of pregnancy", limits=c(0, 350), breaks=c(0,50,100,150,200,250,300))+
   ylab("Number of record")+
+  labs(title = "Quality green pregnancy in 2019")+
   theme_hc()
 
 ggsave(filename=paste0(dirfigure,"record_distance.pdf"), plot=d)
 fwrite(D3_distance, paste0(dirtemp, "D3_distance.csv"))
 
-rm(D3_distance, DF_distance, group_to_keep, D3_gop, D3_groups_of_pregnancies)
+rm(D3_distance, DF_distance, group_to_keep, D3_gop, D3_groups_of_pregnancies, D3_gop_first_record, p_first_record)

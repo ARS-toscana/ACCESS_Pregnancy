@@ -24,8 +24,8 @@ for (concept in concept_set_aggregation_sensitivity) {
 # no sensitivity analysis
 concept_set_aggregation <- c("FGR_narrow", "FGR_broad", 
                              "GESTDIAB_narrow", "GESTDIAB_broad",
-                             #"MAJORCA_narrow", "MAJORCA_broad", 
-                             #"MICROCEPHALY_narrow", "MICROCEPHALY_broad",
+                             "MAJORCA_narrow", "MAJORCA_broad", 
+                             "MICROCEPHALY_narrow", "MICROCEPHALY_broad",
                              "PREECLAMP_narrow", "PREECLAMP_broad",     
                              #"PRETERMBIRTH_narrow", "PRETERMBIRTH_broad", 
                              "PRETERMBIRTH", 
@@ -49,6 +49,13 @@ temp3 <- D3_pregnancy_outcomes[included_sensitivity == 1 , .(NUM_MATERNALDEATH_s
 temp4 <- D3_pregnancy_outcomes[, .(DEN_MATERNALDEATH_sensitivity = sum(included_sensitivity)), by =.(age_band, year_start_pregnancy )][order(year_start_pregnancy, age_band )]
 
 list_of_aggregated[["MATERNALDEATH"]] <- cbind(temp1[,3], temp2[, 3], temp3[,3], temp4[, 3])
+
+
+################## "NEONATAL_DEATH"
+temp1 <- D3_pregnancy_outcomes[included_main_NEONATAL_DEATH == 1 , .(NUM_NEONATAL_DEATH=sum(NEONATAL_DEATH)), by =.(age_band, year_start_pregnancy )][order(year_start_pregnancy, age_band )]
+temp2 <- D3_pregnancy_outcomes[, .(DEN_NEONATAL_DEATH=sum(included_main_NEONATAL_DEATH)), by =.(age_band, year_start_pregnancy )][order(year_start_pregnancy, age_band )]
+
+list_of_aggregated[["NEONATAL_DEATH"]] <- cbind(temp1[,3], temp2[, 3])
 
 
 D4_pregnancy_outcomes <- temp1[,1:2]
